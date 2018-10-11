@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="modulea_colorPrimary">#3F51B5</color>
+    <color name="modulea_colorPrimaryDark">#303F9F</color>
+    <color name="modulea_colorAccent">#FF4081</color>
+</resources>

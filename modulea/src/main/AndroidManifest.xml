@@ -1,0 +1,13 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.liukuai.modulea">
+
+    <application >
+        <activity android:name=".MuduleAMainActivity"
+            android:exported="false"
+            android:label="module_A">
+
+        </activity>
+    </application>
+
+
+</manifest>

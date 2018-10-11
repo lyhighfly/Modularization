@@ -1,0 +1,27 @@
+apply plugin: 'groovy'
+apply plugin: 'maven'
+
+dependencies {
+    //使用gradle运行时工具的声明
+    compile gradleApi()
+    compile localGroovy()
+    compile 'com.android.tools.build:gradle:3.1.0'
+    compile group: 'org.javassist', name: 'javassist', version: '3.20.0-GA'
+}
+
+//repositories {
+//    mavenCentral()
+//}
+
+//发布到本地
+uploadArchives {
+    File parentFile = project.getGradle().getGradleUserHomeDir().getParentFile()
+    println "parentFile Path:${parentFile}"
+    repositories.mavenDeployer{
+            repository(url:"file:${parentFile}/.m2/repository") {
+                pom.groupId = "com.liukuai.module_build"
+                pom.artifactId = "mtplugin"
+                pom.version = "0.0.5"
+            }
+        }
+}

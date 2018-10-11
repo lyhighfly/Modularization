@@ -1,0 +1,10 @@
+ext {
+    compile_sdk_version = 26
+    application_id = "meituan.com.modulazition"
+    min_sdk_version = 14
+    target_sdk_version = 26
+    appcompat_version = "26.1.0"
+    arouter_api_version = "1.2.1"
+    arouter_compiler_version = "1.1.2"
+    main_module = "app"
+}

@@ -1,0 +1,2 @@
+include ':app'
+include ':moduleb', ':modulea', ':base_lib', ':module_build'

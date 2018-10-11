@@ -1,0 +1,30 @@
+apply plugin: 'com.android.library'
+//纯library不需要添加此插件
+//apply plugin:"com.sankuai.myplugin"
+android {
+    compileSdkVersion rootProject.ext.compile_sdk_version
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.min_sdk_version
+        targetSdkVersion rootProject.ext.target_sdk_version
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    api "com.android.support:appcompat-v7:${rootProject.ext.appcompat_version}"
+    api 'com.android.support.constraint:constraint-layout:1.1.2'
+    api "com.alibaba:arouter-api:${rootProject.ext.arouter_api_version}"
+
+}

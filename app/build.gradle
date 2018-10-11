@@ -1,0 +1,43 @@
+//apply plugin: 'com.android.application'
+//此处的名字为gradle工程中meta-inf properties的文件名
+apply plugin: 'com.liukuai.myplugin'
+
+android {
+    compileSdkVersion rootProject.ext.compile_sdk_version
+
+    defaultConfig {
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName()]
+            }
+        }
+        applicationId rootProject.ext.application_id
+        minSdkVersion rootProject.ext.min_sdk_version
+        targetSdkVersion rootProject.ext.target_sdk_version
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    //直接在build.gradle中定义类型并注册监听
+//    gradle.addListener(new TimeLine())
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    api project(':base_lib')
+    //runtimeOnly声明方式，可以达到编译器module 代码隔离的目的, 但是资源隔离没有做到
+//    runtimeOnly project(':modulea')
+    annotationProcessor "com.alibaba:arouter-compiler:${rootProject.ext.arouter_compiler_version}"
+}
+
+//可选配置
+appindicator{
+    myRealApp = 'com.liukuai.modulazition.MyApplication'
+    myShadowApp = 'com.liukuai.modulazition.MainAppShadow'
+}

@@ -1,0 +1,28 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.liukuai.modulea">
+
+    <application
+        android:name=".ModuleAApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/modulea_modulea_ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/modulea_ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/modulea_AppTheme" >
+        <activity android:name=".MuduleADebugMainActivity"
+            android:label="module_A">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".MuduleADebugSecondActivity"
+            android:exported="false"></activity>
+        <activity android:name=".MuduleAMainActivity"
+            android:exported="false"></activity>
+    </application>
+
+
+</manifest>
